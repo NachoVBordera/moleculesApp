@@ -1,8 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import * as $3Dmol from "3dmol";
 
-const Viewer = ({ cifData }) => {
-  const viewerRef = useRef(null);
+interface ViewerProps {
+  cifData: any;
+}
+
+const Viewer: React.FC<ViewerProps> = ({ cifData }) => {
+  const viewerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!cifData) return;
@@ -16,7 +20,9 @@ const Viewer = ({ cifData }) => {
     viewer.zoomTo();
     viewer.render();
 
-    return () => viewer.removeAllModels();
+    return () => {
+      viewer.removeAllModels();
+    };
   }, [cifData]);
 
   return <div ref={viewerRef} className="w-full h-full " />;

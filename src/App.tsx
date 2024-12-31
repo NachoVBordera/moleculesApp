@@ -4,13 +4,13 @@ import Menu from "./components/Menu";
 import Viewer from "./components/Viewer";
 const App = () => {
   const [selectedName, setSelectedName] = useState("2r");
-  const [cifData, setCifData] = useState(null);
+  const [cifData, setCifData] = useState<string | null>(null);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   useEffect(() => {
     fetch(`/${selectedName}.cif`) // Este archivo CIF debe estar en la carpeta /public o /assets
       .then((response) => response.text())
-      .then((data) => setCifData(data))
+      .then((data: string) => setCifData(data))
       .catch((error) => console.error("Error loading CIF file:", error));
   }, [selectedName]);
 
