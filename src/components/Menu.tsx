@@ -6,7 +6,6 @@ import {
   Listbox,
   ListboxItem,
 } from "@nextui-org/react";
-import { Key } from "react";
 
 interface MenuProps {
   isOpen: boolean;
