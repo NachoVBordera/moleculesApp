@@ -5,56 +5,67 @@ import {
   DrawerBody,
   Listbox,
   ListboxItem,
+  DrawerFooter,
 } from "@nextui-org/react";
+import { Link } from "@nextui-org/link";
 
 interface MenuProps {
   isOpen: boolean;
   onOpenChange: () => void;
-  setSelectedName: any;
 }
 
-const Menu: React.FC<MenuProps> = ({
-  isOpen,
-  onOpenChange,
-  setSelectedName,
-}) => {
+const Menu: React.FC<MenuProps> = ({ isOpen, onOpenChange }) => {
   const names = [
     "2r",
     "6f",
     "8i",
     "8l",
+    "9o",
     "10t",
     "16b",
     "16h",
     "19c",
     "25γ",
     "25δ",
+    "25ι",
     "31a",
     "33d",
     "34n",
     "36i",
-    "25ι",
-    "9o",
   ];
 
   return (
     <Drawer isOpen={isOpen} onOpenChange={onOpenChange} placement="left">
       <DrawerContent>
-        <DrawerHeader></DrawerHeader>
+        <DrawerHeader />
         <DrawerBody>
           <Listbox
+            className="list-box-section"
             aria-label="Actions"
             onAction={(key) => {
-              setSelectedName(key);
               onOpenChange();
             }}
           >
             {names.map((name) => (
-              <ListboxItem href={`/${name}`} key={name}>
+              <ListboxItem
+                className="listbox-Item-label"
+                href={`/${name}`}
+                key={name}
+              >
                 {name}
               </ListboxItem>
             ))}
           </Listbox>
+          <DrawerFooter>
+            Made with love by
+            <Link
+              href="https://github.com/NachoVBordera"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Nacho
+            </Link>
+          </DrawerFooter>
         </DrawerBody>
       </DrawerContent>
     </Drawer>
