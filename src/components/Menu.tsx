@@ -42,7 +42,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onOpenChange }) => {
           <Listbox
             className="list-box-section"
             aria-label="Actions"
-            onAction={(key) => {
+            onAction={() => {
               onOpenChange();
             }}
           >

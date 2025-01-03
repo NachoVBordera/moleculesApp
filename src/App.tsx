@@ -1,10 +1,4 @@
-import {
-  Routes,
-  Route,
-  useParams,
-  Navigate,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button, useDisclosure } from "@nextui-org/react";
 import Menu from "./components/Menu";
