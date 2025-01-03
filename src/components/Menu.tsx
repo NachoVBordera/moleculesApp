@@ -57,7 +57,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onOpenChange }) => {
             ))}
           </Listbox>
           <DrawerFooter>
-            Made with love by
+            Made with 🖤 by
             <Link
               href="https://github.com/NachoVBordera"
               rel="noopener noreferrer"
